@@ -1,0 +1,26 @@
+.contenedorImg {
+  overflow: hidden;
+}
+
+.image {
+  transition: 1s;
+  background-position: center center;
+  height: 100%;
+  background-size: cover;
+}
+
+.image:hover {
+  transform: rotateZ(3deg) scale(1.1);
+}
+
+.disponible {
+  background-color: greenyellow;
+  text-align: center;
+  padding: 5px;
+}
+
+.nodisponible {
+  background-color: lightcoral;
+  text-align: center;
+  padding: 5px;
+}

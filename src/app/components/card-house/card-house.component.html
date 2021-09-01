@@ -1,0 +1,20 @@
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="contenedorImg col-md-4">
+      <div class="image" [ngStyle]="{'background-image' : 'url(' + house?.foto + ')'}">
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{house?.titulo}}</h5>
+        <button class="btn btn-secondary btn-sm mb-2" [routerLink]="['/house', house?.id]">Ir a detalle</button>
+        <p class="card-text" [ngClass]="{'disponible': house?.disponibilidad, 'nodisponible': !house?.disponibilidad}">
+          <small>{{
+            (house?.disponibilidad) ? 'disponible':
+            'no disponible'}}</small>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
