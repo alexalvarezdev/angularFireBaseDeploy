@@ -19,9 +19,8 @@ export class HouseDetailComponent implements OnInit {
   ngOnInit(): void {
 
     this.activateRoute.params.subscribe(params => {
-      const id = Number(params.idhouse)
-      this.myHouse = this.housesService.getById(id);
-      console.log(this.myHouse);
+      const result = this.housesService.getById(params.idhouse);
+      result.subscribe(data => this.myHouse = data)
     })
 
 

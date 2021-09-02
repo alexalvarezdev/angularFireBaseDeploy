@@ -1,9 +1,9 @@
 {
   "targets": {
-    "airbb-669c3": {
+    "airbandb-f7164": {
       "hosting": {
         "deploy": [
-          "airbb-669c3"
+          "airbandb-f7164"
         ]
       }
     }

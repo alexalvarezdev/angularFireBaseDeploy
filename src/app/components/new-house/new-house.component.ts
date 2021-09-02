@@ -17,14 +17,16 @@ export class NewHouseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(pForm: any) {
+  async onSubmit(pForm: any) {
     const casa = pForm.value;
     casa.disponibilidad = true;
 
-    const message = this.housesService.create(casa);
-    if (message === 'success') {
-      this.router.navigate(['/home']);
+    const message = await this.housesService.create(casa);
+    console.log(message);
+    if (message.success) {
+      this.router.navigate(["/home"]);
     }
+
   }
 
 }
