@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "airbb-669c3": {
+      "hosting": {
+        "deploy": [
+          "airbb-669c3"
+        ]
+      }
+    }
+  }
+}

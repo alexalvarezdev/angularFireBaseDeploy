@@ -27,5 +27,13 @@
     4 - las casas que esten disponible tendrá un borde verde y las no disponible un rojo
 
 
+//Siguiente tarea
 
+    1 - en la vista de detalle cargar los datos de inmmueble y dejar un espacio asignado dentro de la vista para visualizar un mapa.
+
+    2 - Crear un menu de navegación transversal para ir a lista de inmuebles y cargar el formulario de registro de un immueble.
+
+    3 - Crear un formulario de tipo template para añadir a través un elemento al array.
+
+    
 

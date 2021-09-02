@@ -1,1 +1,61 @@
-<p>new-house works!</p>
+<section class="container">
+  <form #registerHouse="ngForm" (ngSubmit)="onSubmit(registerHouse)">
+
+    <div class="formGroup">
+      <label for="titulo">Titulo</label>
+      <input type="text" class="form-control" ngModel name="titulo" id="titulo">
+    </div>
+
+    <div class="formGroup">
+      <label for="direccion">Dirección</label>
+      <input type="text" class="form-control" ngModel name="direccion">
+    </div>
+
+    <div class="formGroup">
+      <select name="ciudad" ngModel id="ciudad" class="form-control mt-3">
+        <option value="" selected>Selecciona una ciudad</option>
+        <option value="madrid">Madrid</option>
+        <option value="valencia">Valencia</option>
+        <option value="granada">Granada</option>
+        <option value="barcelona">Barcelona</option>
+        <option value="coruña">Coruña</option>
+        <option value="sevilla">Sevilla</option>
+        <option value="valladolid">Valladolid</option>
+      </select>
+    </div>
+
+
+    <div class="formGroup">
+      <label for="numerohabitaciones">Numero de habitaciones</label>
+      <input type="number" class="form-control" ngModel name="numerohabitaciones" id="numerohabitaciones">
+    </div>
+
+
+    <div class="formGroup">
+      <label for="propietario">Propietario</label>
+      <input type="text" class="form-control" ngModel name="propietario" id="propietario">
+    </div>
+
+    <div class="formGroup">
+      <label for="foto">Fotografía</label>
+      <input type="text" class="form-control" ngModel name="foto" id="foto">
+    </div>
+
+    <div class="row mb-4">
+      <div class="formGroup col-6">
+        <label for="lat">Latitud</label>
+        <input type="number" class="form-control" ngModel name="lat" id="lat">
+      </div>
+      <div class="formGroup col-6">
+        <label for="lat">Longitud</label>
+        <input type="number" class="form-control" ngModel name="long" id="long">
+      </div>
+
+    </div>
+
+    <input class="btn btn-danger" type="submit" valu="Alquilar">
+
+
+
+  </form>
+</section>

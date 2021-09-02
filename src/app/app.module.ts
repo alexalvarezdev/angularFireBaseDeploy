@@ -8,6 +8,7 @@ import { HouseDetailComponent } from './components/house-detail/house-detail.com
 import { NewHouseComponent } from './components/new-house/new-house.component';
 import { CardHouseComponent } from './components/card-house/card-house.component';
 
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { CardHouseComponent } from './components/card-house/card-house.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
