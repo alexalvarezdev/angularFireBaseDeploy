@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { House } from 'src/app/interfaces/house.interface';
+import { HousesService } from 'src/app/services/houses.service';
 
 @Component({
   selector: 'app-card-house',
@@ -9,9 +10,18 @@ import { House } from 'src/app/interfaces/house.interface';
 export class CardHouseComponent implements OnInit {
 
   @Input() house: House | undefined;
-  constructor() { }
+  constructor(private housesService: HousesService) { }
 
   ngOnInit(): void {
   }
 
+  async onDelete(pId: string | undefined) {
+    if (pId)
+    {
+      const response = await this.housesService.delete(pId);
+      if (response.success) {
+        alert('Casa borrada correctamente');
+      }
+      }
+  }
 }

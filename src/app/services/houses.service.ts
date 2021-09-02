@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { House } from '../interfaces/house.interface';
-import { map } from 'rxjs/operators';
 //import { HOUSES } from './houses.db';
 
 
@@ -23,6 +22,17 @@ export class HousesService {
 
   getById(pId: string) {
     return this.collection.doc(pId).valueChanges();
+  }
+
+  delete(pId: string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      try {
+        this.collection.doc(pId).delete();
+        resolve({ success: 'ok' })
+      } catch (err) {
+        reject(err);
+      }
+    })
   }
 
   create(pHouse: House): Promise<any> {
