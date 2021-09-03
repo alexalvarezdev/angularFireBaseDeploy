@@ -7,4 +7,30 @@
     </article>
 
   </div>
+  <div class="row"> 
+  <agm-map [fitBounds]="true" [latitude]="latitud" [longitude]="longitud" [zoom]="10"
+  (mapRightClick)="onRightClick($event)">
+
+  <agm-marker [latitude]="latitud" [longitude]="longitud"
+  [iconUrl]="$any({url: 'https://lh3.googleusercontent.com/proxy/5UNrrnpwNNxH_o0-bfPVO92MDRjEp4hHr0fh7wdiFyZG9pyRQ8ffsNXD7ataxAPHGRN-YWq-TM_7fYPwxuKuuJ5ne8cIJpUygsrTgGbEeSf_Yw0Wv1Egb97CUw_usYPYQlq36nJhyqUfDbGdC-44Ot9kD7zMmuU_K1jWVetyXpzW9eKRRD2mpDYH', scaledSize: { width: 40, height: 40}})"
+  
+  ></agm-marker>
+
+  <agm-marker [latitude]="house?.lat" [longitude]="house?.long" *ngFor="let house of arrHouse | async" [agmFitBounds]="true"> 
+    <agm-info-window> 
+     
+    <h6 class="tituloMarket">{{house?.titulo}}</h6>
+    <img class="thumb" [src]="house?.foto">
+    <button class="btn btn-danger btn-sm"[routerLink]="['/house', house?.id]"> Más</button>
+    <hr>
+    <small>Propietario: {{house.propietario}}</small>
+
+    </agm-info-window>
+
+  </agm-marker>
+
+
+</agm-map>
+
+  </div>
 </section>
