@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { House } from '../interfaces/house.interface';
+import { map } from 'rxjs/operators';
 //import { HOUSES } from './houses.db';
 
 
@@ -35,13 +36,14 @@ export class HousesService {
     })
   }
 
-  create(pHouse: House, pId: string=""): Promise<any> {
-    return new Promise((resolve, reject) => {
+
+  create(pHouse: House, pId: string = ""): Promise<any> {
+    return new Promise(async (resolve, reject) => {
       try {
         //resolve, recibo una house pero sin id, firestore tiene un metodo que me permite crear un id y asignarselo a nuevo elemento (ID de documento);
-        const id = (pId ==="") ? this.firestore.createId(): pId;
+        const id = (pId === "") ? this.firestore.createId() : pId;
         pHouse.id = id;
-        this.collection.doc(id).set(pHouse);
+        const result = await this.collection.doc(id).set(pHouse);
         resolve({ success: 'ok' });
       } catch (err) {
         //reject

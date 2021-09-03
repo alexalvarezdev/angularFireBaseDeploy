@@ -7,7 +7,14 @@
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{house?.titulo}}</h5>
+
         <button class="btn btn-secondary btn-sm mb-2" [routerLink]="['/house', house?.id]">Ir a detalle</button>
+
+        <button class="btn btn-danger btn-sm ms-2 mb-2" (click)="onDelete(house?.id)">Borrar</button>
+
+        <button class="btn btn-warning btn-sm ms-2 mb-2" [routerLink]="['/update', house?.id]">Actualizar</button>
+
+
         <p class="card-text" [ngClass]="{'disponible': house?.disponibilidad, 'nodisponible': !house?.disponibilidad}">
           <small>{{
             (house?.disponibilidad) ? 'disponible':
